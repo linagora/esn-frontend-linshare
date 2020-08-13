@@ -9,6 +9,7 @@
   "author": "",
   "license": "AGPLv3",
   "dependencies": {
-    "esn-frontend-common-libs": "github:openpaas-suite/esn-frontend-common-libs#main"
+    "esn-frontend-common-libs": "github:openpaas-suite/esn-frontend-common-libs#main",
+    "linshare-api-client": "0.0.12"
   }
 }
