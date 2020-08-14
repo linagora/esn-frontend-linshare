@@ -23,7 +23,6 @@ require('esn-frontend-common-libs/src/frontend/js/modules/file-browser/file-brow
 require('esn-frontend-common-libs/src/frontend/js/modules/module-registry/module-registry.module');
 require('esn-frontend-common-libs/src/frontend/js/modules/lodash-wrapper');
 
-require('./app.config');
 require('./app.constants');
 require('./common/linshare-api.service');
 require('./common/linshare-jwt-token-cache.service');
