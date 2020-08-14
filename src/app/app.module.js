@@ -25,7 +25,6 @@ require('esn-frontend-common-libs/src/frontend/js/modules/lodash-wrapper');
 
 require('./app.config');
 require('./app.constants');
-require('./app.run');
 require('./common/linshare-api.service');
 require('./common/linshare-jwt-token-cache.service');
 require('./common/linshare-restangular.service');
