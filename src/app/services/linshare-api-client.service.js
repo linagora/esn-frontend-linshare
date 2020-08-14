@@ -1,5 +1,8 @@
 'use strict';
 
+require('./linshare-api-client.wrapper');
+require('./linshare-api-client-provider.service');
+
 angular.module('linagora.esn.linshare')
   .factory('linshareApiClient', function(LinshareApiClient, linshareApiClientProvider) {
     return {

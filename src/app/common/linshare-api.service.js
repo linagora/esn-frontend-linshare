@@ -1,5 +1,7 @@
 'use strict';
 
+require('./linshare-restangular.service');
+
 angular.module('linagora.esn.linshare')
   .factory('linshareApiService', function(linshareRestangular) {
     return {
