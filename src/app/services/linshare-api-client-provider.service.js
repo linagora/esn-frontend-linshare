@@ -1,5 +1,8 @@
 'use strict';
 
+require('./linshare-api-client.wrapper');
+require('../common/linshare-jwt-token-cache.service');
+
 angular.module('linagora.esn.linshare')
   .factory('linshareApiClientProvider', function($q, esnConfig, LinshareApiClient, linshareJwtTokenCache) {
     let cachedToken = null;

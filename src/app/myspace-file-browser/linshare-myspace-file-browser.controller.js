@@ -1,5 +1,7 @@
 'use strict';
 
+require('../services/linshare-loaders.service');
+
 angular.module('linagora.esn.linshare')
   .controller('linshareMyspaceFileBrowserController', linshareMyspaceFileBrowserController);
 

@@ -1,5 +1,7 @@
 'use strict';
 
+require('./linshare-api-client.service');
+
 angular.module('linagora.esn.linshare')
   .factory('linshareFileUpload', function($q, inBackground, linshareApiClient) {
     return {
