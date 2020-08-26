@@ -8,13 +8,13 @@ let expect = chai.expect;
 describe('The linshareApiClient service', function() {
   let $rootScope, $q, linshareApiClientProvider, linshareApiClient, esnConfigMock;
 
-  beforeEach(module('linagora.esn.linshare', function($provide) {
+  beforeEach(angular.mock.module('linagora.esn.linshare', function($provide) {
     $provide.value('esnConfig', function() {
       return esnConfigMock;
     });
   }));
 
-  beforeEach(inject(function(_$rootScope_, _$q_, _linshareApiClientProvider_, _linshareApiClient_) {
+  beforeEach(angular.mock.inject(function(_$rootScope_, _$q_, _linshareApiClientProvider_, _linshareApiClient_) {
     $rootScope = _$rootScope_;
     $q = _$q_;
     linshareApiClientProvider = _linshareApiClientProvider_;

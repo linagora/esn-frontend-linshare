@@ -14,14 +14,14 @@ describe('The linshareFileBrowserLoaders service', function() {
   });
 
   beforeEach(function() {
-    module('linagora.esn.linshare');
-    module(function($provide) {
+    angular.mock.module('linagora.esn.linshare');
+    angular.mock.module(function($provide) {
       $provide.value('linshareApiClient', linshareApiClient);
     });
   });
 
   beforeEach(function() {
-    inject(function(_$rootScope_, _linshareFileBrowserLoaders_) {
+    angular.mock.inject(function(_$rootScope_, _linshareFileBrowserLoaders_) {
       $rootScope = _$rootScope_;
       linshareFileBrowserLoaders = _linshareFileBrowserLoaders_;
     });

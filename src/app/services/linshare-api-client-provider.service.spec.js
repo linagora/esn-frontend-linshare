@@ -14,17 +14,17 @@ describe('The linshareApiClientProvider service', function() {
     ClientMock = sinon.spy();
     esnConfigMock = sinon.stub();
 
-    module('esn.configuration', function($provide) {
+    angular.mock.module('esn.configuration', function($provide) {
       $provide.value('esnConfig', esnConfigMock);
     });
 
-    module('linagora.esn.linshare', function($provide) {
+    angular.mock.module('linagora.esn.linshare', function($provide) {
       $provide.value('LinshareApiClient', {
         Client: ClientMock
       });
     });
 
-    inject(function(_$q_, _$rootScope_, _linshareJwtTokenCache_, _linshareApiClientProvider_) {
+    angular.mock.inject(function(_$q_, _$rootScope_, _linshareJwtTokenCache_, _linshareApiClientProvider_) {
       $q = _$q_;
       $rootScope = _$rootScope_;
       linshareJwtTokenCache = _linshareJwtTokenCache_;

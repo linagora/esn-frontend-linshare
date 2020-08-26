@@ -5,9 +5,9 @@ describe('The linshareApiService service', function() {
   let linshareApiService;
 
   beforeEach(function() {
-    module('linagora.esn.linshare');
+    angular.mock.module('linagora.esn.linshare');
 
-    inject(function(_$httpBackend_, _linshareApiService_) {
+    angular.mock.inject(function(_$httpBackend_, _linshareApiService_) {
       $httpBackend = _$httpBackend_;
       linshareApiService = _linshareApiService_;
     });
