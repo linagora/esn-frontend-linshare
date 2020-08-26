@@ -9,9 +9,9 @@ describe('The linshareFileUpload service', function() {
   let $q, $rootScope, linshareApiClient;
   let linshareFileUpload;
 
-  beforeEach(module('linagora.esn.linshare'));
+  beforeEach(angular.mock.module('linagora.esn.linshare'));
 
-  beforeEach(inject(function(_$rootScope_, _$q_, _linshareApiClient_, _linshareFileUpload_) {
+  beforeEach(angular.mock.inject(function(_$rootScope_, _$q_, _linshareApiClient_, _linshareFileUpload_) {
     $rootScope = _$rootScope_;
     $q = _$q_;
     linshareApiClient = _linshareApiClient_;

@@ -14,12 +14,12 @@ describe('The linshareJwtTokenCache service', function() {
     function CacheMock(_cacheOption_) {
       cacheOption = _cacheOption_;
     }
-    module('esn.cache', function($provide) {
+    angular.mock.module('esn.cache', function($provide) {
       $provide.value('Cache', CacheMock);
     });
-    module('linagora.esn.linshare');
+    angular.mock.module('linagora.esn.linshare');
 
-    inject(function(_$q_, _$rootScope_, _linshareApiService_, _linshareJwtTokenCache_) { // eslint-disable-line no-unused-lets
+    angular.mock.inject(function(_$q_, _$rootScope_, _linshareApiService_, _linshareJwtTokenCache_) { // eslint-disable-line no-unused-lets
       $q = _$q_;
       $rootScope = _$rootScope_;
       linshareApiService = _linshareApiService_;
