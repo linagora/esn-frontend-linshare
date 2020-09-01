@@ -17,7 +17,11 @@ module.exports = function(config) {
     singleRun,
     browsers: ['FirefoxHeadless'],
     customLaunchers: {
-      FirefoxHeadless: { base: 'Firefox', flags: ['--headless'] }
+      FirefoxHeadless: {
+        base: 'Firefox',
+        flags: ['--headless'],
+        prefs: { 'network.proxy.type': 0 }
+      }    
     },
     reporters: ['spec'],
     preprocessors: {
