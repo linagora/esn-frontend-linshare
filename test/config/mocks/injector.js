@@ -4,4 +4,4 @@ angular.module('esn.test.injector', []).run(function($q) {
 
 beforeEach(angular.mock.module('esn.test.injector'));
 
-window.$q = angular.injector(["ng"]).get("$q");
+window.$q = angular.injector(['ng']).get('$q');

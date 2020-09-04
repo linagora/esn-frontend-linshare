@@ -3,7 +3,7 @@
 /* global chai: false */
 /* global sinon: false */
 
-let expect = chai.expect;
+const { expect } = chai;
 
 describe('The linshareFileUpload service', function() {
   let $q, $rootScope, linshareApiClient;
@@ -22,9 +22,9 @@ describe('The linshareFileUpload service', function() {
     it('should call LinShare API to create document in My space', function() {
       linshareApiClient.createDocument = sinon.stub().returns($q.when({}));
 
-      let file = { name: 'Learn_JS_in_6_hours.pdf' };
-      let size = 12345;
-      let fileType = 'text';
+      const file = { name: 'Learn_JS_in_6_hours.pdf' };
+      const size = 12345;
+      const fileType = 'text';
 
       linshareFileUpload.uploadFile(null, file, fileType, size);
 
@@ -43,14 +43,14 @@ describe('The linshareFileUpload service', function() {
         return $q.when();
       };
 
-      let file = { name: 'Learn_JS_in_6_hours.pdf' };
-      let size = 12345;
-      let fileType = 'text';
-      let notifySpy = sinon.spy();
+      const file = { name: 'Learn_JS_in_6_hours.pdf' };
+      const size = 12345;
+      const fileType = 'text';
+      const notifySpy = sinon.spy();
 
       linshareFileUpload.uploadFile(null, file, fileType, size).then(null, null, notifySpy);
 
-      let progressEvent = { loaded: 7, total: 10 };
+      const progressEvent = { loaded: 7, total: 10 };
 
       onUploadProgress(progressEvent);
       $rootScope.$digest();
@@ -59,16 +59,16 @@ describe('The linshareFileUpload service', function() {
     });
 
     it('should support canceler by calling "cancel" function of the upload promise', function() {
-      let promise = $q.when({});
+      const promise = $q.when({});
 
       promise.cancel = sinon.spy();
 
       linshareApiClient.createDocument = sinon.stub().returns(promise);
 
-      let file = { name: 'Learn_JS_in_6_hours.pdf' };
-      let size = 12345;
-      let fileType = 'text';
-      let cancelerDeferred = $q.defer();
+      const file = { name: 'Learn_JS_in_6_hours.pdf' };
+      const size = 12345;
+      const fileType = 'text';
+      const cancelerDeferred = $q.defer();
 
       linshareFileUpload.uploadFile(null, file, fileType, size, {}, cancelerDeferred.promise);
 

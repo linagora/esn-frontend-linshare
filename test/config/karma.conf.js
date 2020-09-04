@@ -8,6 +8,7 @@ module.exports = function(config) {
   // fail because they exceed the default 2000ms timeout. This will happen often in
   // the CI where the tests run slower than in our locals.
   const timeout = process.env.TEST_TIMEOUT || 10000;
+
   config.set({
     client: {
       mocha: {
@@ -20,7 +21,6 @@ module.exports = function(config) {
     ],
     frameworks: ['mocha', 'sinon-chai'],
     colors: true,
-    singleRun: true,
     autoWatch: true,
     singleRun,
     browsers: ['FirefoxHeadless'],
@@ -29,7 +29,7 @@ module.exports = function(config) {
         base: 'Firefox',
         flags: ['--headless'],
         prefs: { 'network.proxy.type': 0 }
-      }    
+      }
     },
     reporters: ['spec'],
     preprocessors: {
