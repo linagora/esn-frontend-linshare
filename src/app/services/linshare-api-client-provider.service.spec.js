@@ -3,7 +3,7 @@
 /* global chai: false */
 /* global sinon: false */
 
-let expect = chai.expect;
+const { expect } = chai;
 
 describe('The linshareApiClientProvider service', function() {
   let $rootScope, $q;

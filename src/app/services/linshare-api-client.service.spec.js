@@ -3,7 +3,7 @@
 /* global chai: false */
 /* global sinon: false */
 
-let expect = chai.expect;
+const { expect } = chai;
 
 describe('The linshareApiClient service', function() {
   let $rootScope, $q, linshareApiClientProvider, linshareApiClient, esnConfigMock;
@@ -34,7 +34,7 @@ describe('The linshareApiClient service', function() {
     });
 
     it('should create user document', function() {
-      let client = {
+      const client = {
         user: {
           documents: {
             create: sinon.stub().returns($q.when())
@@ -54,8 +54,8 @@ describe('The linshareApiClient service', function() {
     });
 
     it('should support cancellation', function() {
-      let promise = $q.when();
-      let client = {
+      const promise = $q.when();
+      const client = {
         user: {
           documents: {
             create: sinon.stub().returns(promise)
@@ -67,7 +67,7 @@ describe('The linshareApiClient service', function() {
 
       linshareApiClientProvider.get = sinon.stub().returns($q.when(client));
 
-      let uploadPromise = linshareApiClient.createDocument({
+      const uploadPromise = linshareApiClient.createDocument({
         file: { name: 'my file' },
         fileSize: 100
       });
@@ -93,15 +93,15 @@ describe('The linshareApiClient service', function() {
     });
 
     it('should create document from URL', function() {
-      let client = {
+      const client = {
         user: {
           documents: {
             createFromUrl: sinon.spy()
           }
         }
       };
-      let data = { url: '123' };
-      let options = { async: true };
+      const data = { url: '123' };
+      const options = { async: true };
 
       linshareApiClientProvider.get = sinon.stub().returns($q.when(client));
       linshareApiClient.createDocumentFromUrl(data, options);
@@ -125,14 +125,14 @@ describe('The linshareApiClient service', function() {
     });
 
     it('should get the async task', function() {
-      let client = {
+      const client = {
         user: {
           documents: {
             getAsyncTask: sinon.spy()
           }
         }
       };
-      let asyncTaskId = '123';
+      const asyncTaskId = '123';
 
       linshareApiClientProvider.get = sinon.stub().returns($q.when(client));
       linshareApiClient.getDocumentAsyncTaskById(asyncTaskId);
@@ -156,7 +156,7 @@ describe('The linshareApiClient service', function() {
     });
 
     it('should list work groups', function() {
-      let client = {
+      const client = {
         user: {
           workgroup: {
             list: sinon.spy()
@@ -186,7 +186,7 @@ describe('The linshareApiClient service', function() {
     });
 
     it('should list nodes of a workgroup node', function() {
-      let client = {
+      const client = {
         user: {
           workgroup: {
             listNodes: sinon.spy()
@@ -216,7 +216,7 @@ describe('The linshareApiClient service', function() {
     });
 
     it('should list user documents', function() {
-      let client = {
+      const client = {
         user: {
           documents: {
             list: sinon.spy()
@@ -246,7 +246,7 @@ describe('The linshareApiClient service', function() {
     });
 
     it('should list user documents', function() {
-      let client = {
+      const client = {
         user: {
           shares: {
             shareDocuments: sinon.spy()
@@ -276,15 +276,15 @@ describe('The linshareApiClient service', function() {
     });
 
     it('should download the document', function() {
-      let client = {
+      const client = {
         user: {
           workgroup: {
             downloadDocument: sinon.spy()
           }
         }
       };
-      let workGroupUuid = 'toto';
-      let documentUuid = 'tata';
+      const workGroupUuid = 'toto';
+      const documentUuid = 'tata';
 
       linshareApiClientProvider.get = sinon.stub().returns($q.when(client));
       linshareApiClient.downloadDocument(workGroupUuid, documentUuid);

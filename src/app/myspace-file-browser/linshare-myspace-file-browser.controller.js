@@ -6,7 +6,7 @@ angular.module('linagora.esn.linshare')
   .controller('linshareMyspaceFileBrowserController', linshareMyspaceFileBrowserController);
 
 function linshareMyspaceFileBrowserController(linshareFileBrowserLoaders, esnI18nService) {
-  let self = this;
+  const self = this;
 
   self.options = {
     multipleSelect: true,

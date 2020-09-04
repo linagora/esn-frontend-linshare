@@ -9,9 +9,9 @@ angular.module('linagora.esn.linshare')
     };
 
     function uploadFile(unusedUrl, file, type, size, options, canceler) {
-      let deferred = $q.defer();
+      const deferred = $q.defer();
 
-      let uploadPromise = linshareApiClient.createDocument({
+      const uploadPromise = linshareApiClient.createDocument({
         file: file,
         fileSize: size
       }, {

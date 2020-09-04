@@ -3,7 +3,7 @@
 /* global chai: false */
 /* global sinon: false */
 
-let expect = chai.expect;
+const { expect } = chai;
 
 describe('The linshareJwtTokenCache service', function() {
   let cacheOption;
@@ -19,7 +19,8 @@ describe('The linshareJwtTokenCache service', function() {
     });
     angular.mock.module('linagora.esn.linshare');
 
-    angular.mock.inject(function(_$q_, _$rootScope_, _linshareApiService_, _linshareJwtTokenCache_) { // eslint-disable-line no-unused-lets
+    // eslint-disable-next-line no-unused-vars
+    angular.mock.inject(function(_$q_, _$rootScope_, _linshareApiService_, _linshareJwtTokenCache_) {
       $q = _$q_;
       $rootScope = _$rootScope_;
       linshareApiService = _linshareApiService_;
@@ -28,7 +29,7 @@ describe('The linshareJwtTokenCache service', function() {
 
   describe('The loader fn', function() {
     it('should call linshareApiService to generate JWT token', function(done) {
-      let token = '123';
+      const token = '123';
 
       linshareApiService.generateJwtToken = sinon.stub().returns($q.when({ data: token }));
 

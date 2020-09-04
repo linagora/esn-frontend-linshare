@@ -2,7 +2,7 @@
 
 /* global chai, sinon: false */
 
-let expect = chai.expect;
+const { expect } = chai;
 
 describe('The linshareFileBrowserLoaders service', function() {
   let $rootScope, linshareFileBrowserLoaders, linshareApiClient;
@@ -29,7 +29,7 @@ describe('The linshareFileBrowserLoaders service', function() {
 
   describe('The loadMySpace function', function() {
     it('should call linshareApiClient.listDocuments and process the documents', function(done) {
-      let docs = [
+      const docs = [
         { name: 'doc1' },
         { name: 'doc2' }
       ];

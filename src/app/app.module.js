@@ -19,7 +19,7 @@ require('esn-frontend-common-libs/src/frontend/js/modules/cache');
 require('esn-frontend-common-libs/src/frontend/js/modules/file');
 require('esn-frontend-common-libs/src/frontend/js/modules/http');
 require('esn-frontend-common-libs/src/frontend/js/modules/i18n/i18n.module');
-require('esn-frontend-common-libs/src/frontend/js/modules/file-browser/file-browser.module')
+require('esn-frontend-common-libs/src/frontend/js/modules/file-browser/file-browser.module');
 require('esn-frontend-common-libs/src/frontend/js/modules/module-registry/module-registry.module');
 require('esn-frontend-common-libs/src/frontend/js/modules/lodash-wrapper');
 

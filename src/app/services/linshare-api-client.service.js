@@ -42,13 +42,13 @@ angular.module('linagora.esn.linshare')
      */
     function createDocument(data, options) {
       let cancelFn = angular.noop;
-      let promise = getClient().then(function(client) {
-        let formData = new FormData();
+      const promise = getClient().then(function(client) {
+        const formData = new FormData();
 
         formData.append('file', data.file);
         formData.append('filesize', data.fileSize);
 
-        let promise = client.user.documents.create(formData, options);
+        const promise = client.user.documents.create(formData, options);
 
         cancelFn = promise.cancel;
 
